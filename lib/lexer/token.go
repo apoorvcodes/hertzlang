@@ -23,8 +23,8 @@ var tokens = []string{
 	IDENT:   "IDENT",
 	INT:     "INT",
 	SEMI:    ";",
-    FUNCTION: "fn",
-	VARIABLE: "let",
+    FUNCTION: "FUNCTION",
+	VARIABLE: "VARIABLE",
 	// Infix ops
 	ADD: "+",
 	SUB: "-",

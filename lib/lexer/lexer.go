@@ -3,6 +3,7 @@ package lexer
 import (
 	"bufio"
 	"fmt"
+	// "fmt"
 	"io"
 	"unicode"
 )
@@ -45,7 +46,6 @@ func (l *lexer) Lex() (position, Token, string) {
             return l.pos, DIV, "/"
          case '=':
             return l.pos, ASSIGN, "=" 
-
 		 default:
 			if unicode.IsSpace(r) {
 				continue
@@ -54,14 +54,20 @@ func (l *lexer) Lex() (position, Token, string) {
 				lit := l.lexInt()
 				return l.pos, INT, lit
 				
-			}else  {
-				strg := string(r)
-				switch strg {
-                case "let" :
-                    return l.pos, VARIABLE, "let"
+			}else if unicode.IsLetter(r) {
+				l.backup()
+				lit := l.lexIdent()
+				switch lit {
+				case "let":
+				 return l.pos, VARIABLE, "let" 
+				case "fn": 
+				return l.pos, FUNCTION, "fn"
 				default:
-					fmt.Print(strg)
-                }	
+					return l.pos, IDENT, lit
+				} 
+				}else  {
+				strg := string(r)
+				fmt.Print(strg + "\n")
 			}
 
 		}
