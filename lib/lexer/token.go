@@ -11,6 +11,7 @@ const (
 	ADD 
 	FUNCTION
 	SUB 
+	VARIABLE
 	MUL 
 	DIV 
 	ASSIGN 
@@ -22,7 +23,8 @@ var tokens = []string{
 	IDENT:   "IDENT",
 	INT:     "INT",
 	SEMI:    ";",
-    FUNCTION: "fnc",
+    FUNCTION: "fn",
+	VARIABLE: "let",
 	// Infix ops
 	ADD: "+",
 	SUB: "-",

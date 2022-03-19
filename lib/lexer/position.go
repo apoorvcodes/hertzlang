@@ -2,10 +2,13 @@ package lexer
 
 
 type position struct {
-	line int
-	column int
+	Line int
+	Column int
 }
 
-func NewPos() *position {
-	return &position{}
+func NewPos() position {
+	return position{
+		Line: 1,
+		Column: 0,
+	}
 }

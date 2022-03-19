@@ -1,4 +1,1 @@
-
-fnc abc (s string) {
-    logger.log("Hello from hertz")
-}
+let a = b
