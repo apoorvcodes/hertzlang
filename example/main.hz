@@ -1,1 +1,10 @@
-let a = b
+class main inherits abc {
+    fn main(a) {
+      if a == 4 {
+          return 
+      } elif a == 5 {
+         for a,b in []a {
+             
+         }
+      }
+}
